@@ -1,4 +1,308 @@
-:root{
+:root{:root{
+  --bg: #ECE7DC;
+  --bg-panel: #E1DAC6;
+  --ink: #23302B;
+  --ink-soft: #57645C;
+  --ink-faint: #7C877E;
+  --accent: #8B4B4F;
+  --accent-soft: #C79A6B;
+  --line: rgba(35,48,43,0.18);
+  --line-strong: rgba(35,48,43,0.32);
+  --radius: 2px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
+
+h1,h2,h3{
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  line-height:1.2;
+  margin:0;
+  color:var(--ink);
+  letter-spacing:0.01em;
+}
+
+a{color:var(--accent); text-decoration:none;}
+a:hover{text-decoration:underline;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+img,svg{display:block; max-width:100%;}
+
+.wrap{max-width:960px; margin:0 auto; padding:0 28px;}
+
+/* ---------- Header / Nav ---------- */
+header.site{
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+header.site .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.brand{
+  font-family:'EB Garamond', Georgia, serif;
+  font-size:19px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand img{
+  height:34px;
+  width:34px;
+  object-fit:contain;
+  display:block;
+}
+.brand .cred{
+  font-family:'Work Sans', sans-serif;
+  font-weight:400;
+  font-size:13px;
+  color:var(--ink-faint);
+  margin-left:4px;
+}
+nav.primary ul{
+  display:flex;
+  gap:22px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+nav.primary a{
+  color:var(--ink-soft);
+  font-size:14px;
+  border-bottom:1px solid transparent;
+  padding-bottom:3px;
+  transition:color .2s, border-color .2s;
+}
+nav.primary a:hover, nav.primary a[aria-current="page"]{
+  color:var(--ink);
+  border-color:var(--accent);
+  text-decoration:none;
+}
+
+/* ---------- Hero (home) ---------- */
+.hero{
+  padding:40px 0 32px;
+}
+.hero .epigraph{
+  font-family:'EB Garamond', Georgia, serif;
+  font-size:clamp(20px, 2.2vw, 24px);
+  font-weight:600;
+  color:var(--accent);
+  max-width:38ch;
+  margin:0 0 18px;
+  line-height:1.35;
+}
+.hero .statement{
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  font-size:clamp(26px, 3vw, 34px);
+  line-height:1.28;
+  max-width:26ch;
+  margin:0;
+}
+.hero .statement .name{
+  color:var(--accent);
+}
+.hero .sub{
+  margin-top:16px;
+  max-width:52ch;
+  color:var(--ink-soft);
+  font-size:16px;
+}
+
+/* ---------- Generic page header (about/services/etc) ---------- */
+.page-head{
+  padding:36px 0 22px;
+  border-bottom:1px solid var(--line);
+}
+.page-head h1{font-size:clamp(26px,3.2vw,32px);}
+.page-head .kicker{
+  color:var(--accent);
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:0.04em;
+  margin-bottom:6px;
+}
+
+/* ---------- Sections ---------- */
+section{
+  padding:36px 0;
+  border-bottom:1px solid var(--line);
+}
+section:last-of-type{border-bottom:none;}
+section h2{
+  font-size:clamp(21px,2.2vw,25px);
+  max-width:24ch;
+}
+section .lede{
+  max-width:64ch;
+  color:var(--ink-soft);
+  margin-top:10px;
+  font-size:16px;
+}
+
+/* ---------- About page layout ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:36px;
+}
+.about-grid .portrait{
+  aspect-ratio:4/5;
+  background:var(--bg-panel);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--ink-faint);
+  font-size:13px;
+  text-align:center;
+  padding:16px;
+  overflow:hidden;
+}
+.about-grid .portrait img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:var(--radius);
+}
+.about-grid .bio p{margin:0 0 14px; max-width:62ch;}
+.about-grid .bio p:last-child{margin-bottom:0;}
+.credential-line{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  color:var(--ink-faint);
+  font-size:13.5px;
+}
+@media (max-width:700px){
+  .about-grid{grid-template-columns:1fr;}
+  .about-grid .portrait{max-width:200px;}
+}
+
+/* ---------- Services list ---------- */
+.service{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+.service:first-child{padding-top:0;}
+.service:last-child{border-bottom:none;}
+.service h3{font-size:20px; margin-bottom:8px; font-weight:600;}
+.service .who{
+  font-size:13px;
+  color:var(--accent);
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  letter-spacing:0.03em;
+  margin-bottom:4px;
+}
+.service p{color:var(--ink-soft); margin:0;}
+@media (max-width:700px){
+  .service{grid-template-columns:1fr;}
+}
+
+.session-note{
+  background:var(--bg-panel);
+  border-radius:var(--radius);
+  padding:20px 24px;
+  margin-top:6px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.session-note .fig{
+  font-family:'EB Garamond', Georgia, serif;
+  font-size:26px;
+  font-weight:600;
+  color:var(--accent);
+  line-height:1;
+  min-width:52px;
+}
+.session-note .txt{color:var(--ink-soft); max-width:52ch;}
+.session-note .txt strong{color:var(--ink);}
+
+/* ---------- Quote block (What I Do) ---------- */
+.quote-block{
+  border-left:3px solid var(--accent);
+  padding-left:22px;
+  margin:4px 0;
+}
+.quote-block p{
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  font-size:clamp(21px, 2.4vw, 27px);
+  line-height:1.35;
+  color:var(--ink);
+  max-width:36ch;
+  margin:0;
+}
+.more-note{
+  color:var(--ink-faint);
+  font-size:13.5px;
+  margin-top:26px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+
+/* ---------- CTA block ---------- */
+.cta-block{
+  text-align:left;
+  padding:32px 0;
+}
+.cta-block h2{max-width:18ch;}
+.btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:11px 22px;
+  background:var(--ink);
+  color:var(--bg);
+  border-radius:var(--radius);
+  font-size:14px;
+  transition:background .2s;
+}
+.btn:hover{background:var(--accent); text-decoration:none;}
+
+/* ---------- Footer ---------- */
+footer.site{
+  padding:24px 0 36px;
+}
+footer.site .wrap{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  color:var(--ink-faint);
+  font-size:13px;
+}
+footer.site a{color:var(--ink-soft);}
+
   --bg: #ECE7DC;
   --bg-panel: #E1DAC6;
   --ink: #23302B;
