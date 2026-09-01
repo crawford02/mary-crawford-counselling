@@ -240,6 +240,30 @@ section .lede{
 .session-note .txt{color:var(--ink-soft); max-width:52ch;}
 .session-note .txt strong{color:var(--ink);}
 
+/* ---------- Quote block (What I Do) ---------- */
+.quote-block{
+  border-left:3px solid var(--accent);
+  padding-left:28px;
+  margin:8px 0;
+}
+.quote-block p{
+  font-family:'Fraunces', Georgia, serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(24px, 2.8vw, 32px);
+  line-height:1.4;
+  color:var(--ink);
+  max-width:34ch;
+  margin:0;
+}
+.more-note{
+  color:var(--ink-faint);
+  font-size:14.5px;
+  margin-top:36px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+
 /* ---------- CTA block ---------- */
 .cta-block{
   text-align:left;
@@ -271,4 +295,3 @@ footer.site .wrap{
   font-size:14px;
 }
 footer.site a{color:var(--ink-soft);}
-
