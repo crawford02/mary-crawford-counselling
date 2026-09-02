@@ -117,8 +117,15 @@ nav.primary a:hover, nav.primary a[aria-current="page"]{
   font-weight:600;
   color:var(--accent);
   max-width:38ch;
-  margin:0 0 8px;
+  margin:0 0 6px;
   line-height:1.35;
+}
+.hero .epigraph-attrib{
+  font-family:'Work Sans', sans-serif;
+  font-size:13px;
+  color:var(--ink-faint);
+  margin:0 0 20px;
+  letter-spacing:0.01em;
 }
 .hero .epigraph-sub{
   color:var(--ink-soft);
