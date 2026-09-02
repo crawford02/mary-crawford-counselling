@@ -68,17 +68,24 @@ header.site .wrap{
   gap:10px;
 }
 .brand img{
-  height:34px;
-  width:34px;
+  height:38px;
+  width:38px;
   object-fit:contain;
   display:block;
 }
-.brand .cred{
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
+}
+.brand-sub{
   font-family:'Work Sans', sans-serif;
   font-weight:400;
-  font-size:13px;
+  font-size:11.5px;
+  letter-spacing:0.01em;
+  text-transform:none;
   color:var(--ink-faint);
-  margin-left:4px;
+  margin-top:1px;
 }
 nav.primary ul{
   display:flex;
@@ -110,8 +117,14 @@ nav.primary a:hover, nav.primary a[aria-current="page"]{
   font-weight:600;
   color:var(--accent);
   max-width:38ch;
-  margin:0 0 18px;
+  margin:0 0 8px;
   line-height:1.35;
+}
+.hero .epigraph-sub{
+  color:var(--ink-soft);
+  max-width:46ch;
+  margin:0 0 20px;
+  font-size:16px;
 }
 .hero .statement{
   font-family:'EB Garamond', Georgia, serif;
@@ -247,6 +260,52 @@ section .lede{
 }
 .session-note .txt{color:var(--ink-soft); max-width:52ch;}
 .session-note .txt strong{color:var(--ink);}
+
+/* ---------- Pricing list ---------- */
+.pricing-list{
+  list-style:none;
+  margin:20px 0 0;
+  padding:0;
+}
+.pricing-list li{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+  color:var(--ink-soft);
+}
+.pricing-list li:last-child{border-bottom:none;}
+.pricing-list strong{color:var(--ink); font-weight:600;}
+.pricing-list .amount{
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  color:var(--accent);
+  white-space:nowrap;
+}
+
+/* ---------- Questionnaire ---------- */
+.quiz-list{
+  margin:22px 0 0;
+  padding-left:20px;
+}
+.quiz-list > li{
+  margin-bottom:20px;
+  font-family:'EB Garamond', Georgia, serif;
+  font-weight:600;
+  font-size:17px;
+  color:var(--ink);
+}
+.quiz-options{
+  list-style:disc;
+  margin:8px 0 0;
+  padding-left:22px;
+  font-family:'Work Sans', sans-serif;
+  font-weight:400;
+  font-size:15px;
+  color:var(--ink-soft);
+}
+.quiz-options li{margin-bottom:4px;}
 
 /* ---------- Quote block (What I Do) ---------- */
 .quote-block{
