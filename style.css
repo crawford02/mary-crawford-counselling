@@ -379,6 +379,10 @@ footer.site .wrap{
   justify-content:space-between;
   flex-wrap:wrap;
   gap:12px;
+
+  /* ---------- Hero logo (home) ---------- */
+  .hero-logo{float:right;width:40%;max-width:360px;margin:6px 0 24px 40px;}
+  @media (max-width:700px){.hero-logo{float:none;width:66%;max-width:280px;margin:0 0 20px;}}
   color:var(--ink-faint);
   font-size:13px;
 }
